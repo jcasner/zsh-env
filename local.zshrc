@@ -7,19 +7,26 @@ plugins=(git)
 alias git=hub
 
 # ruby
-RVM_DIR="~/.rvm"
-RUBY_VER="ruby-2.2.3"
-if [ -d "${RVM_DIR}" ]; then
-  export PATH="${PATH}:${RVM_DIR}/gems/${RUBY_VER}/bin:${RVM_DIR}/gems/${RUBY_VER}@global/bin:${RVM_DIR}/rubies/${RUBY_VER}/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:${RVM_DIR}/bin"
-  source "${RVM_DIR}/scripts/rvm"
+RBENV_DIR="~/.rvm"
+if [ -d `eval echo "${RBENV_DIR}"` ]; then
+  echo "Configuring ruby"
+  eval "$(rbenv init -)"
+  export PATH="${HOME}/.rbenv/bin:${PATH}"
 fi
 
 # python
-export PATH="~/Library/Python/2.7/bin/:${PATH}"
+PYTHON_HOME="~/Library/Python/2.7"
+export PATH="`eval echo ${PYTHON_HOME}/bin/:${PATH}`"
+export PYTHONPATH="${PYTHON_HOME}/lib/python/site-packages"
+if [ -d "`eval echo ${PYTHONPATH}/virtualenvwrapper`" ]; then
+  export WORKON_HOME="${HOME}/.virtualenvs"
+  export PROJECT_HOME="${HOME}/Devel"
+  source "`eval echo ${PYTHON_HOME}/bin/virtualenvwrapper.sh`"
+fi
 
 # node
 export NVM_DIR=~/.nvm
-if [ -d "${NVM_DIR}" ]; then
+if [ -d "`eval echo ${NVM_DIR}`" ]; then
   . $(brew --prefix nvm)/nvm.sh
 fi
 
