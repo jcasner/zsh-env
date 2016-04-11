@@ -9,7 +9,7 @@ source "${ZSH}/oh-my-zsh.sh"
 alias git=hub
 
 # ruby
-RBENV_DIR="~/.rvm"
+RBENV_DIR="~/.rbenv"
 if [ -d `eval echo "${RBENV_DIR}"` ]; then
   eval "$(rbenv init -)"
   export PATH="${HOME}/.rbenv/bin:${PATH}"
