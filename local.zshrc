@@ -35,6 +35,22 @@ fi
 if [ -d /usr/local/etc/php/5.5 ]; then
   export PATH="$(brew --prefix homebrew/php/php55)/bin:$PATH"
 fi
+
 if [ -d /usr/local/etc/php/5.4 ]; then
   export PATH="$(brew --prefix homebrew/php/php54)/bin:$PATH"
+fi
+
+# Include Drush bash customizations.
+if [ -f "/Users/jaredcasner/.drush/drush.bashrc" ] ; then
+  source /Users/jaredcasner/.drush/drush.bashrc
+fi
+
+# Include Drush completion.
+if [ -f "/Users/jaredcasner/.drush/drush.complete.sh" ] ; then
+  source /Users/jaredcasner/.drush/drush.complete.sh
+fi
+
+# Include Drush prompt customizations.
+if [ -f "/Users/jaredcasner/.drush/drush.prompt.sh" ] ; then
+  source /Users/jaredcasner/.drush/drush.prompt.sh
 fi
