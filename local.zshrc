@@ -30,3 +30,11 @@ export NVM_DIR=~/.nvm
 if [ -d `eval echo "${NVM_DIR}"` ]; then
   . $(brew --prefix nvm)/nvm.sh
 fi
+
+# php
+if [ -d /usr/local/etc/php/5.5 ]; then
+  export PATH="$(brew --prefix homebrew/php/php55)/bin:$PATH"
+fi
+if [ -d /usr/local/etc/php/5.4 ]; then
+  export PATH="$(brew --prefix homebrew/php/php54)/bin:$PATH"
+fi
