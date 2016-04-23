@@ -41,16 +41,16 @@ if [ -d /usr/local/etc/php/5.4 ]; then
 fi
 
 # Include Drush bash customizations.
-if [ -f "/Users/jaredcasner/.drush/drush.bashrc" ] ; then
-  source /Users/jaredcasner/.drush/drush.bashrc
+if [ -f `eval echo "~/.drush/drush.bashrc"` ] ; then
+  source `eval echo "~/.drush/drush.bashrc"`
 fi
 
 # Include Drush completion.
-if [ -f "/Users/jaredcasner/.drush/drush.complete.sh" ] ; then
-  source /Users/jaredcasner/.drush/drush.complete.sh
+if [ -f `eval echo "~/.drush/drush.complete.sh"` ] ; then
+  source `eval echo "~/.drush/drush.complete.sh"`
 fi
 
 # Include Drush prompt customizations.
-if [ -f "/Users/jaredcasner/.drush/drush.prompt.sh" ] ; then
-  source /Users/jaredcasner/.drush/drush.prompt.sh
+if [ -f `eval echo "~/.drush/drush.prompt.sh"` ] ; then
+  source `eval echo "~/.drush/drush.prompt.sh"`
 fi
