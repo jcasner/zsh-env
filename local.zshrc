@@ -26,7 +26,7 @@ push () {
   if [ -n "${1}" ]; then
     remote="${1}"
   else
-    remote="upstream"
+    remote="origin"
   fi
   if [ -n "${2}" ]; then
     branch="${2}"
