@@ -8,6 +8,34 @@ source "${ZSH}/oh-my-zsh.sh"
 # commands
 alias git=hub
 
+pull () {
+  if [ -n "${1}" ]; then
+    remote="${1}"
+  else
+    remote="upstream"
+  fi
+  if [ -n "${2}" ]; then
+    branch="${2}"
+  else
+    branch="master"
+  fi
+  `eval echo "git pull ${remote} ${branch}"`
+}
+
+push () {
+  if [ -n "${1}" ]; then
+    remote="${1}"
+  else
+    remote="upstream"
+  fi
+  if [ -n "${2}" ]; then
+    branch="${2}"
+  else
+    branch="master"
+  fi
+  `eval echo "git push ${remote} ${branch}"`
+}
+
 # ruby
 RBENV_DIR="~/.rbenv"
 if [ -d `eval echo "${RBENV_DIR}"` ]; then
@@ -38,19 +66,4 @@ fi
 
 if [ -d /usr/local/etc/php/5.4 ]; then
   export PATH="$(brew --prefix homebrew/php/php54)/bin:$PATH"
-fi
-
-# Include Drush bash customizations.
-if [ -f `eval echo "~/.drush/drush.bashrc"` ] ; then
-  source `eval echo "~/.drush/drush.bashrc"`
-fi
-
-# Include Drush completion.
-if [ -f `eval echo "~/.drush/drush.complete.sh"` ] ; then
-  source `eval echo "~/.drush/drush.complete.sh"`
-fi
-
-# Include Drush prompt customizations.
-if [ -f `eval echo "~/.drush/drush.prompt.sh"` ] ; then
-  source `eval echo "~/.drush/drush.prompt.sh"`
 fi
