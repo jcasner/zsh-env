@@ -60,6 +60,10 @@ if [ -d `eval echo "${NVM_DIR}"` ]; then
 fi
 
 # php
+if [ -d /usr/local/etc/php/5.6 ]; then
+  export PATH="$(brew --prefix homebrew/php/php56)/bin:$PATH"
+fi
+
 if [ -d /usr/local/etc/php/5.5 ]; then
   export PATH="$(brew --prefix homebrew/php/php55)/bin:$PATH"
 fi
