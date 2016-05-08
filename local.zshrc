@@ -1,9 +1,20 @@
 # zsh config
-export ZSH=~/.oh-my-zsh
+export ZSH=${HOME}/.oh-my-zsh
 ZSH_THEME="clean"
 plugins=(git)
 
 source "${ZSH}/oh-my-zsh.sh"
+
+# VS Code
+VS_LIBRARY="${HOME}/Library/Application Support/Code/User/"
+if [ -d "${VS_LIBRARY}" ]; then
+  if [[ -f "${VS_LIBRARY}/settings.json" && ! -L "${VS_LIBRARY}/settings.json" ]]; then
+    rm -f "${VS_LIBRARY}/settings.json"
+  fi
+  if [ ! -L "${VS_LIBRARY}/settings.json" ]; then
+    ln -s "${HOME}/Code/zsh-env/settings.json" "${VS_LIBRARY}"
+  fi
+fi
 
 # commands
 alias git=hub
@@ -37,25 +48,25 @@ push () {
 }
 
 # ruby
-RBENV_DIR="~/.rbenv"
-if [ -d `eval echo "${RBENV_DIR}"` ]; then
+RBENV_DIR="${HOME}/.rbenv"
+if [ -d "${RBENV_DIR}" ]; then
   eval "$(rbenv init -)"
   export PATH="${HOME}/.rbenv/bin:${PATH}"
 fi
 
 # python
-PYTHON_HOME="~/Library/Python/2.7"
-export PATH=`eval echo "${PYTHON_HOME}/bin/:${PATH}"`
+PYTHON_HOME="${HOME}/Library/Python/2.7"
+export PATH="${PYTHON_HOME}/bin/:${PATH}"
 export PYTHONPATH="${PYTHON_HOME}/lib/python/site-packages"
-if [ -d `eval echo "${PYTHONPATH}/virtualenvwrapper"` ]; then
+if [ -d "${PYTHONPATH}/virtualenvwrapper" ]; then
   export WORKON_HOME="${HOME}/.virtualenvs"
   export PROJECT_HOME="${HOME}/Devel"
-  source `eval echo "${PYTHON_HOME}/bin/virtualenvwrapper.sh"`
+  source "${PYTHON_HOME}/bin/virtualenvwrapper.sh"
 fi
 
 # node
-export NVM_DIR=~/.nvm
-if [ -d `eval echo "${NVM_DIR}"` ]; then
+export NVM_DIR="${HOME}/.nvm"
+if [ -d "${NVM_DIR}" ]; then
   . $(brew --prefix nvm)/nvm.sh
 fi
 
