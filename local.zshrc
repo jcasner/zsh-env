@@ -4,6 +4,7 @@ ZSH_THEME="clean"
 plugins=(git)
 
 source "${ZSH}/oh-my-zsh.sh"
+export PATH="/usr/local/sbin:${PATH}"
 
 # VS Code
 VS_LIBRARY="${HOME}/Library/Application Support/Code/User/"
@@ -56,7 +57,7 @@ fi
 
 # python
 PYTHON_HOME="${HOME}/Library/Python/2.7"
-export PATH="${PYTHON_HOME}/bin/:${PATH}"
+export PATH="${PYTHON_HOME}/bin:${PATH}"
 export PYTHONPATH="${PYTHON_HOME}/lib/python/site-packages"
 if [ -d "${PYTHONPATH}/virtualenvwrapper" ]; then
   export WORKON_HOME="${HOME}/.virtualenvs"
