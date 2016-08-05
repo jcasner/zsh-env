@@ -83,3 +83,7 @@ fi
 if [ -d /usr/local/etc/php/5.4 ]; then
   export PATH="$(brew --prefix homebrew/php/php54)/bin:$PATH"
 fi
+
+# android
+export ANDROID_HOME=/Users/jared/Library/Android/sdk
+export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
