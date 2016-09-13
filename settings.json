@@ -1,8 +1,12 @@
 // Place your settings in this file to overwrite the default settings
 {
   "editor.tabSize": 2,
-  
+
   "files.insertFinalNewline": true,
-  
-  "files.trimTrailingWhitespace": true
+
+  "files.trimTrailingWhitespace": true,
+
+  "ruby.rubocop.executePath": "/Users/jaredcasner/.rbenv/shims/",
+
+  "ruby.rubocop.configFilePath": "."
 }
