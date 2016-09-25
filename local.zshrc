@@ -85,5 +85,5 @@ if [ -d /usr/local/etc/php/5.4 ]; then
 fi
 
 # android
-export ANDROID_HOME=/Users/jared/Library/Android/sdk
-export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
+export ANDROID_HOME="${HOME}/Library/Android/sdk"
+export PATH="${PATH}:${ANDROID_HOME}/tools:${ANDROID_HOME}/platform-tools"
