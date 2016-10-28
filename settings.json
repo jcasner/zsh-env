@@ -6,6 +6,8 @@
 
   "files.trimTrailingWhitespace": true,
 
+  "editor.wrappingColumn": 120,
+
   "ruby.rubocop.executePath": "/Users/jaredcasner/.rbenv/shims/",
 
   "ruby.rubocop.configFilePath": "/Users/jaredcasner/code/opengov/delphiusapp/.rubocop.yml"
