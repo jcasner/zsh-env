@@ -8,5 +8,5 @@
 
   "ruby.rubocop.executePath": "/Users/jaredcasner/.rbenv/shims/",
 
-  "ruby.rubocop.configFilePath": "."
+  "ruby.rubocop.configFilePath": "/Users/jaredcasner/code/opengov/delphiusapp/.rubocop.yml"
 }
