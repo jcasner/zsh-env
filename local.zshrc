@@ -73,16 +73,19 @@ fi
 
 # php
 if [ -d /usr/local/etc/php/5.6 ]; then
-  export PATH="$(brew --prefix homebrew/php/php56)/bin:$PATH"
+  export PATH="$(brew --prefix homebrew/php/php56)/bin:${PATH}"
 fi
 
 if [ -d /usr/local/etc/php/5.5 ]; then
-  export PATH="$(brew --prefix homebrew/php/php55)/bin:$PATH"
+  export PATH="$(brew --prefix homebrew/php/php55)/bin:${PATH}"
 fi
 
 if [ -d /usr/local/etc/php/5.4 ]; then
-  export PATH="$(brew --prefix homebrew/php/php54)/bin:$PATH"
+  export PATH="$(brew --prefix homebrew/php/php54)/bin:${PATH}"
 fi
+
+# go
+export PATH="${PATH}:/usr/local/opt/go/libexec/bin"
 
 # android
 export ANDROID_HOME="${HOME}/Library/Android/sdk"
