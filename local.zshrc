@@ -84,9 +84,6 @@ if [ -d /usr/local/etc/php/5.4 ]; then
   export PATH="$(brew --prefix homebrew/php/php54)/bin:${PATH}"
 fi
 
-# go
-export PATH="${PATH}:/usr/local/opt/go/libexec/bin"
-
 # android
 export ANDROID_HOME="${HOME}/Library/Android/sdk"
 export PATH="${PATH}:${ANDROID_HOME}/tools:${ANDROID_HOME}/platform-tools"
