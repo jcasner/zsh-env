@@ -29,7 +29,7 @@ pull () {
   if [ -n "${2}" ]; then
     branch="${2}"
   else
-    branch="master"
+    branch=`git rev-parse --abbrev-ref HEAD`
   fi
   `eval echo "git pull ${remote} ${branch}"`
 }
@@ -43,7 +43,7 @@ push () {
   if [ -n "${2}" ]; then
     branch="${2}"
   else
-    branch="master"
+    branch=`git rev-parse --abbrev-ref HEAD`
   fi
   `eval echo "git push ${remote} ${branch}"`
 }
