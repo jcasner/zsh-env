@@ -95,3 +95,13 @@ export PATH="$PATH:${GOPATH}/bin:${GOROOT}/bin"
 
 test -d "${GOPATH}" || mkdir "${GOPATH}"
 test -d "${GOPATH}/src/github.com" || mkdir -p "${GOPATH}/src/github.com"
+
+# ping until connection made
+ssping () {
+while :
+do
+    nc -z -w 3 $1 22 && break
+    echo -n .
+    sleep 1
+done
+}
