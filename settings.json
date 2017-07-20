@@ -9,5 +9,8 @@
   "editor.wordWrapColumn": 120,
 
   "workbench.welcome.enabled": false,
-  "window.zoomLevel": 0
+
+  "window.zoomLevel": 0,
+
+  "workbench.colorTheme": "Visual Studio Dark"
 }
