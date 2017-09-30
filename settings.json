@@ -12,5 +12,11 @@
 
   "window.zoomLevel": 0,
 
-  "workbench.colorTheme": "Visual Studio Dark"
+  "editor.rulers": [80, 120],
+
+  "workbench.startupEditor": "newUntitledFile",
+
+  "workbench.colorTheme": "Visual Studio Dark",
+
+  "extensions.ignoreRecommendations": false
 }
