@@ -20,6 +20,11 @@ fi
 # commands
 alias git=hub
 
+prune () {
+  git fetch upstream && git fetch upstream --prune
+  git branch -vv | grep ': gone]' | awk '{print $1}' | xargs git branch -d
+}
+
 pull () {
   if [ -n "${1}" ]; then
     remote="${1}"

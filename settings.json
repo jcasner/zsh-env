@@ -18,5 +18,7 @@
 
   "workbench.colorTheme": "Visual Studio Dark",
 
-  "extensions.ignoreRecommendations": false
+  "extensions.ignoreRecommendations": false,
+  "prettier.eslintIntegration": true,
+  "javascript.updateImportsOnFileMove.enabled": "always"
 }
