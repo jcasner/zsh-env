@@ -4,7 +4,7 @@ ZSH_THEME="clean"
 plugins=(git)
 
 source "${ZSH}/oh-my-zsh.sh"
-export PATH="/usr/local/sbin:${PATH}"
+export PATH="/Users/jaredcasner/.ebcli-virtual-env/executables:/usr/local/sbin:${PATH}"
 
 # VS Code
 VS_LIBRARY="${HOME}/Library/Application Support/Code/User/"
@@ -22,7 +22,7 @@ alias git=hub
 
 prune () {
   git fetch upstream && git fetch upstream --prune
-  git branch -vv | grep ': gone]' | awk '{print $1}' | xargs git branch -d
+  git branch --merged | grep -v '*' | awk '{print $1}' | xargs git branch -d
 }
 
 pull () {

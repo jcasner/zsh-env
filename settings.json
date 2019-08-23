@@ -20,5 +20,8 @@
 
   "extensions.ignoreRecommendations": false,
   "prettier.eslintIntegration": true,
-  "javascript.updateImportsOnFileMove.enabled": "always"
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "window.newWindowDimensions": "inherit",
+  "git.autofetch": true,
+  "[yaml]": {}
 }
