@@ -20,6 +20,16 @@ fi
 # commands
 alias git=hub
 
+getInstances () {
+  aws ec2 describe-instances \
+    --query 'Reservations[*].Instances[*].{Instance:InstanceId,Name:Tags[?Key==`Name`]|[0].Value,State:State.Name}' \
+    --output table
+}
+
+connect () {
+  aws ssm start-session --target "${1}"
+}
+
 prune () {
   git fetch upstream && git fetch upstream --prune
   git branch --merged | grep -v '*' | awk '{print $1}' | xargs git branch -d
