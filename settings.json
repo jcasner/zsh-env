@@ -77,5 +77,9 @@
       "name": "Vue Green",
       "value": "#42b883"
     }
-  ]
+  ],
+  "aws.profile": "default",
+  "[json]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  }
 }

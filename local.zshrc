@@ -4,7 +4,7 @@ ZSH_THEME="clean"
 plugins=(git)
 
 source "${ZSH}/oh-my-zsh.sh"
-export PATH="/Users/jaredcasner/.ebcli-virtual-env/executables:/usr/local/sbin:${PATH}"
+export PATH="/usr/local/sbin:${PATH}"
 
 # VS Code
 VS_LIBRARY="${HOME}/Library/Application Support/Code/User/"
@@ -106,7 +106,10 @@ export PATH="${PATH}:${ANDROID_HOME}/tools:${ANDROID_HOME}/platform-tools"
 # Go development
 export GOPATH="${HOME}/code/go"
 export GOROOT="$(brew --prefix golang)/libexec"
-export PATH="$PATH:${GOPATH}/bin:${GOROOT}/bin"
+export PATH="${PATH}:${GOPATH}/bin:${GOROOT}/bin"
+
+# MySQL 5.7
+export PATH="/usr/local/opt/mysql@5.7/bin:${PATH}"
 
 test -d "${GOPATH}" || mkdir "${GOPATH}"
 test -d "${GOPATH}/src/github.com" || mkdir -p "${GOPATH}/src/github.com"
