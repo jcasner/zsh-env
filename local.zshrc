@@ -20,18 +20,8 @@ fi
 # commands
 alias git=hub
 
-getInstances () {
-  aws ec2 describe-instances \
-    --query 'Reservations[*].Instances[*].{Instance:InstanceId,Name:Tags[?Key==`Name`]|[0].Value,State:State.Name}' \
-    --output table
-}
-
-connect () {
-  aws ssm start-session --target "${1}"
-}
-
 prune () {
-  git fetch upstream && git fetch upstream --prune
+  git fetch --all && git fetch upstream --prune
   git branch --merged | grep -v '*' | awk '{print $1}' | xargs git branch -d
 }
 
@@ -63,56 +53,18 @@ push () {
   `eval echo "git push ${remote} ${branch}"`
 }
 
-# ruby
-RBENV_DIR="${HOME}/.rbenv"
-if [ -d "${RBENV_DIR}" ]; then
-  eval "$(rbenv init -)"
-  export PATH="${HOME}/.rbenv/bin:${PATH}"
-fi
-
-# python
-PYTHON_HOME="${HOME}/Library/Python/2.7"
-export PATH="${PYTHON_HOME}/bin:${PATH}"
-export PYTHONPATH="${PYTHON_HOME}/lib/python/site-packages"
-if [ -d "${PYTHONPATH}/virtualenvwrapper" ]; then
-  export WORKON_HOME="${HOME}/.virtualenvs"
-  export PROJECT_HOME="${HOME}/Devel"
-  source "${PYTHON_HOME}/bin/virtualenvwrapper.sh"
-fi
-
 # node
 export NVM_DIR="${HOME}/.nvm"
 if [ -d "${NVM_DIR}" ]; then
   . $(brew --prefix nvm)/nvm.sh
 fi
 
-# php
-if [ -d /usr/local/etc/php/5.6 ]; then
-  export PATH="$(brew --prefix homebrew/php/php56)/bin:${PATH}"
-fi
-
-if [ -d /usr/local/etc/php/5.5 ]; then
-  export PATH="$(brew --prefix homebrew/php/php55)/bin:${PATH}"
-fi
-
-if [ -d /usr/local/etc/php/5.4 ]; then
-  export PATH="$(brew --prefix homebrew/php/php54)/bin:${PATH}"
-fi
-
 # android
 export ANDROID_HOME="${HOME}/Library/Android/sdk"
 export PATH="${PATH}:${ANDROID_HOME}/tools:${ANDROID_HOME}/platform-tools"
 
-# Go development
-export GOPATH="${HOME}/code/go"
-export GOROOT="$(brew --prefix golang)/libexec"
-export PATH="${PATH}:${GOPATH}/bin:${GOROOT}/bin"
-
 # MySQL 5.7
 export PATH="/usr/local/opt/mysql@5.7/bin:${PATH}"
-
-test -d "${GOPATH}" || mkdir "${GOPATH}"
-test -d "${GOPATH}/src/github.com" || mkdir -p "${GOPATH}/src/github.com"
 
 # ping until connection made
 ssping () {

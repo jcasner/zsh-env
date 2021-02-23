@@ -81,5 +81,6 @@
   "aws.profile": "default",
   "[json]": {
     "editor.defaultFormatter": "vscode.json-language-features"
-  }
+  },
+  "python.showStartPage": false
 }
