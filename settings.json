@@ -10,8 +10,6 @@
 
   "workbench.welcome.enabled": false,
 
-  "window.zoomLevel": 0,
-
   "editor.rulers": [80, 120],
 
   "workbench.startupEditor": "newUntitledFile",
@@ -82,5 +80,15 @@
   "[json]": {
     "editor.defaultFormatter": "vscode.json-language-features"
   },
-  "python.showStartPage": false
+  "python.showStartPage": false,
+  "workbench.editorAssociations": {
+    "*.ipynb": "jupyter.notebook.ipynb"
+  },
+  "apexPMD.showStdOut": true,
+  "vs-kubernetes": {
+    "vscode-kubernetes.helm-path.mac": "/Users/jared.casner/.vs-kubernetes/tools/helm/darwin-amd64/helm",
+    "vscode-kubernetes.minikube-path.mac": "/Users/jared.casner/.vs-kubernetes/tools/minikube/darwin-amd64/minikube"
+  },
+  "apexPMD.runOnFileChange": true,
+  "salesforcedx-vscode-apex.java.home": "/Library/Java/JavaVirtualMachines/jdk-11.0.11.jdk/Contents/Home"
 }

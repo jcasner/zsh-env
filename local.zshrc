@@ -4,7 +4,7 @@ ZSH_THEME="clean"
 plugins=(git)
 
 source "${ZSH}/oh-my-zsh.sh"
-export PATH="/usr/local/sbin:${PATH}"
+export PATH="/usr/local/bin:/usr/local/sbin:${PATH}"
 
 # VS Code
 VS_LIBRARY="${HOME}/Library/Application Support/Code/User/"
@@ -55,9 +55,8 @@ push () {
 
 # node
 export NVM_DIR="${HOME}/.nvm"
-if [ -d "${NVM_DIR}" ]; then
-  . $(brew --prefix nvm)/nvm.sh
-fi
+[ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
+[ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 
 # android
 export ANDROID_HOME="${HOME}/Library/Android/sdk"
@@ -75,3 +74,6 @@ do
     sleep 1
 done
 }
+
+alias ls="exa --icons"
+alias cat=bat
