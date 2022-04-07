@@ -19,6 +19,7 @@ fi
 
 # commands
 alias git=hub
+alias python=python3
 
 prune () {
   git fetch --all && git fetch upstream --prune
