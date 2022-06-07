@@ -76,7 +76,6 @@
       "value": "#42b883"
     }
   ],
-  "aws.profile": "default",
   "[json]": {
     "editor.defaultFormatter": "vscode.json-language-features"
   },
@@ -90,5 +89,8 @@
     "vscode-kubernetes.minikube-path.mac": "/Users/jared.casner/.vs-kubernetes/tools/minikube/darwin-amd64/minikube"
   },
   "apexPMD.runOnFileChange": true,
-  "salesforcedx-vscode-apex.java.home": "/Library/Java/JavaVirtualMachines/jdk-11.0.11.jdk/Contents/Home"
+  "salesforcedx-vscode-apex.java.home": "/Library/Java/JavaVirtualMachines/jdk-11.0.11.jdk/Contents/Home",
+  "json.schemas": [],
+  "aws.telemetry": false,
+  "security.workspace.trust.untrustedFiles": "open"
 }
