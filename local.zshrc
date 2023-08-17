@@ -4,7 +4,7 @@ ZSH_THEME="clean"
 plugins=(git)
 
 source "${ZSH}/oh-my-zsh.sh"
-export PATH="/usr/local/bin:/usr/local/sbin:${PATH}"
+export PATH="/usr/local/opt/python/libexec/bin:/usr/local/bin:/usr/local/sbin:${PATH}"
 
 # VS Code
 VS_LIBRARY="${HOME}/Library/Application Support/Code/User/"
