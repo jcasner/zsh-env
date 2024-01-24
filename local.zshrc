@@ -6,6 +6,9 @@ plugins=(git)
 source "${ZSH}/oh-my-zsh.sh"
 export PATH="/usr/local/opt/python/libexec/bin:/usr/local/bin:/usr/local/sbin:${PATH}"
 
+# add psql to PATH
+export PATH="/opt/homebrew/opt/postgresql@15/bin:$PATH"
+
 # VS Code
 VS_LIBRARY="${HOME}/Library/Application Support/Code/User/"
 if [ -d "${VS_LIBRARY}" ]; then
@@ -104,5 +107,5 @@ do
 done
 }
 
-alias ls="exa --icons"
+alias ls="eza --icons"
 alias cat=bat
